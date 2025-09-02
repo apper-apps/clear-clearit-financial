@@ -26,7 +26,7 @@ export const useInvoices = (type = null, status = null) => {
       setInvoices(data);
     } catch (err) {
       setError(err.message);
-      toast.error("Failed to load invoices");
+      toast.error("Unable to load your invoices. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -36,9 +36,9 @@ export const useInvoices = (type = null, status = null) => {
     try {
       await invoiceService.updateStatus(invoiceId, newStatus);
       await loadInvoices(); // Reload data
-      toast.success(`Invoice status updated to ${newStatus}`);
+      toast.success(`Invoice status updated successfully`);
     } catch (err) {
-      toast.error("Failed to update invoice status");
+      toast.error("Unable to update invoice status. Please try again.");
       console.error(err);
     }
   };
@@ -47,10 +47,10 @@ export const useInvoices = (type = null, status = null) => {
     try {
       const newInvoice = await invoiceService.create(invoiceData);
       await loadInvoices(); // Reload data
-      toast.success("Invoice created successfully");
+      toast.success("New invoice created successfully");
       return newInvoice;
     } catch (err) {
-      toast.error("Failed to create invoice");
+      toast.error("Unable to create invoice. Please check your information and try again.");
       throw err;
     }
   };
@@ -62,7 +62,7 @@ export const useInvoices = (type = null, status = null) => {
       toast.success("Invoice updated successfully");
       return updatedInvoice;
     } catch (err) {
-      toast.error("Failed to update invoice");
+      toast.error("Unable to update invoice. Please try again.");
       throw err;
     }
   };
@@ -73,7 +73,7 @@ export const useInvoices = (type = null, status = null) => {
       await loadInvoices(); // Reload data
       toast.success("Invoice deleted successfully");
     } catch (err) {
-      toast.error("Failed to delete invoice");
+      toast.error("Unable to delete invoice. Please try again.");
       throw err;
     }
   };
@@ -93,7 +93,6 @@ export const useInvoices = (type = null, status = null) => {
     deleteInvoice
   };
 };
-
 export const useInvoiceSummary = () => {
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(true);

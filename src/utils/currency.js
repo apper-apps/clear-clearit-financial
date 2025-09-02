@@ -1,11 +1,13 @@
-export const formatCurrency = (amount, currency = "AUD") => {
+export const formatCurrency = (amount, currency = "AUD", showCents = true) => {
   if (amount === null || amount === undefined) return "$0.00";
+  
+  const fractionDigits = showCents ? 2 : 0;
   
   return new Intl.NumberFormat("en-AU", {
     style: "currency",
     currency: currency,
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
   }).format(amount);
 };
 

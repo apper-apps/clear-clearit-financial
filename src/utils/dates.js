@@ -31,8 +31,9 @@ export const getDueDateStatus = (dueDate) => {
 };
 
 export const getNextFridayDate = () => {
-  const today = new Date();
-  return nextFriday(today);
+const today = new Date();
+  const friday = nextFriday(today);
+  return friday;
 };
 
 export const getDaysUntilFriday = () => {

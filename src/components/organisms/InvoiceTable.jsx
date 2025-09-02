@@ -189,10 +189,10 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
                 />
               </th>
               <th className="px-4 py-3 text-left">
-                <SortButton column="amount">Amount*</SortButton>
+<SortButton column="amount">Amount</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
-                <SortButton column="dueDate">Due Date*</SortButton>
+<SortButton column="dueDate">Due Date</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
                 <SortButton column="paidDate">Paid Date</SortButton>
@@ -201,10 +201,10 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
                 <SortButton column="companyName">Company</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
-                <SortButton column="invoiceNumber">Invoice #*</SortButton>
+<SortButton column="invoiceNumber">Invoice #</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
-                <SortButton column="payId">PayID*</SortButton>
+<SortButton column="payId">PayID</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
                 <SortButton column="abn">ABN</SortButton>
