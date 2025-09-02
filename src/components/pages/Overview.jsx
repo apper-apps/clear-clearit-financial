@@ -136,10 +136,42 @@ const Overview = () => {
                 </div>
               </div>
 
-              {/* Timeline Indicator */}
-              <div className="pt-4">
-                <div className="h-1 bg-info rounded-full relative">
-                  <div className="absolute left-1/3 top-1/2 w-3 h-3 bg-info rounded-full transform -translate-y-1/2"></div>
+{/* Enhanced Timeline Indicator */}
+              <div className="pt-6 space-y-3">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-text-secondary font-medium">Week Start</span>
+                  <span className="text-text-secondary font-medium">Next Settlement</span>
+                </div>
+                
+                <div className="relative">
+                  {/* Timeline Track */}
+                  <div className="h-2 bg-slate-200 rounded-full relative overflow-hidden">
+                    {/* Progress Fill */}
+                    <div className="absolute left-0 top-0 h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-500" 
+                         style={{ width: '33.33%' }}></div>
+                    
+                    {/* Current Position Indicator */}
+                    <div className="absolute left-1/3 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-md"></div>
+                      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+                        <div className="bg-white px-2 py-1 rounded shadow-sm border border-slate-200">
+                          <span className="text-xs font-medium text-text-primary">Today</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-text-secondary">Mon, {formatDate(new Date(), 'dd MMM')}</span>
+                  <span className="text-text-secondary">Fri, {formatDate(getNextFridayDate(), 'dd MMM')}</span>
+                </div>
+                
+                <div className="text-center">
+                  <p className="text-sm text-text-primary font-medium">Settlement Timeline</p>
+                  <p className="text-xs text-text-secondary mt-1">
+                    Your next settlement is on {formatDate(getNextFridayDate(), 'EEEE, dd MMM yyyy')}
+                  </p>
                 </div>
               </div>
             </div>
