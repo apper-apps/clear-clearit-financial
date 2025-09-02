@@ -44,41 +44,6 @@ const Overview = () => {
       <SettlementBanner />
 
       {/* Key Metrics */}
-{/* Main Metrics - 3 Card Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-<MetricCard
-          title="Total Receivables"
-          value={294115.43}
-          icon="TrendingUp"
-          color="success"
-          breakdown={[
-            { label: "Clearing", value: 88234.63 },
-            { label: "Paid", value: 205880.80 }
-          ]}
-          className="hover:shadow-lg transition-shadow"
-        />
-        
-        <MetricCard
-          title="Total Payables"
-          value={189135.49}
-          icon="TrendingDown" 
-          color="warning"
-          breakdown={[
-            { label: "Clearing", value: 56740.65 },
-            { label: "Unpaid", value: 132394.84 }
-          ]}
-          className="hover:shadow-lg transition-shadow"
-        />
-
-        <MetricCard
-          title="Net Receivable"
-          value={104979.94}
-          icon="DollarSign"
-          color="primary"
-          change={8.2}
-          className="hover:shadow-lg transition-shadow"
-        />
-      </div>
 
       {/* Settlement Summary */}
 {/* Friday Net Settlement Section */}
