@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "name": "Love Pty Ltd",
+    "abn": "12345678901",
+    "primaryContact": "Sarah Johnson",
+    "email": "sarah@love.com.au",
+    "phone": "+61 412 345 678"
+  },
+  {
+    "Id": 2,
+    "name": "Solomon, Wilson and Harris",
+    "abn": "23456789012",
+    "primaryContact": "Michael Wilson",
+    "email": "m.wilson@swh.com.au",
+    "phone": "+61 423 456 789"
+  },
+  {
+    "Id": 3,
+    "name": "Hardy Ltd",
+    "abn": "34567890123",
+    "primaryContact": "Emma Hardy",
+    "email": "emma@hardyltd.com.au",
+    "phone": "+61 434 567 890"
+  },
+  {
+    "Id": 4,
+    "name": "Adams, Martin and Long",
+    "abn": "45678901234",
+    "primaryContact": "James Adams",
+    "email": "j.adams@aml.com.au",
+    "phone": "+61 445 678 901"
+  },
+  {
+    "Id": 5,
+    "name": "Warren-Crawford Pty Ltd",
+    "abn": "56789012345",
+    "primaryContact": "Lisa Crawford",
+    "email": "lisa@warrencrawford.com.au",
+    "phone": "+61 456 789 012"
+  },
+  {
+    "Id": 6,
+    "name": "TechFlow Solutions",
+    "abn": "67890123456",
+    "primaryContact": "David Chen",
+    "email": "david@techflow.com.au",
+    "phone": "+61 467 890 123"
+  },
+  {
+    "Id": 7,
+    "name": "Green Energy Consultants",
+    "abn": "78901234567",
+    "primaryContact": "Rachel Green",
+    "email": "rachel@greenenergy.com.au",
+    "phone": "+61 478 901 234"
+  },
+  {
+    "Id": 8,
+    "name": "Office Supplies Direct",
+    "abn": "89012345678",
+    "primaryContact": "Mark Thompson",
+    "email": "mark@officesupplies.com.au",
+    "phone": "+61 489 012 345"
+  },
+  {
+    "Id": 9,
+    "name": "Building Materials Co",
+    "abn": "90123456789",
+    "primaryContact": "Susan Roberts",
+    "email": "susan@buildingmaterials.com.au",
+    "phone": "+61 490 123 456"
+  },
+  {
+    "Id": 10,
+    "name": "Legal Services Group",
+    "abn": "01234567890",
+    "primaryContact": "Andrew Miller",
+    "email": "andrew@legalservices.com.au",
+    "phone": "+61 401 234 567"
+  },
+  {
+    "Id": 11,
+    "name": "Marketing Solutions Pty",
+    "abn": "12340567891",
+    "primaryContact": "Jennifer Lee",
+    "email": "jennifer@marketingsolutions.com.au",
+    "phone": "+61 412 340 567"
+  }
+]

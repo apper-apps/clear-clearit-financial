@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "date": "2024-09-06",
+    "totalReceivables": 280450.67,
+    "totalPayables": 165432.89,
+    "netAmount": 115017.78,
+    "status": "completed"
+  },
+  {
+    "Id": 2,
+    "date": "2024-08-30",
+    "totalReceivables": 325678.90,
+    "totalPayables": 198765.43,
+    "netAmount": 126913.47,
+    "status": "completed"
+  },
+  {
+    "Id": 3,
+    "date": "2024-08-23",
+    "totalReceivables": 412389.56,
+    "totalPayables": 234567.89,
+    "netAmount": 177821.67,
+    "status": "completed"
+  },
+  {
+    "Id": 4,
+    "date": "2024-09-13",
+    "totalReceivables": 294115.43,
+    "totalPayables": 189135.49,
+    "netAmount": 104979.94,
+    "status": "pending"
+  }
+]
