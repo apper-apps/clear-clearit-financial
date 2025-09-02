@@ -110,9 +110,9 @@ className="fixed left-0 top-0 h-full w-80 bg-secondary border-r border-slate-200
 <div className="flex items-center justify-between p-6 border-b border-slate-200">
               <div className="flex items-center">
 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
-                  <span className="text-header-bg font-bold text-lg">C</span>
+<span className="text-header-bg font-bold text-lg">C</span>
                 </div>
-                <h1 className="text-xl font-bold text-text-primary">ClearIt</h1>
+                <h1 className="text-xl font-bold text-text-primary">ClearITT</h1>
               </div>
               <button
                 onClick={onClose}

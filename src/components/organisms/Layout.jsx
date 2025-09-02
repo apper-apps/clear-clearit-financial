@@ -20,7 +20,7 @@ return (
 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
               <span className="text-header-bg font-bold text-lg">C</span>
             </div>
-            <h1 className="text-white text-xl font-bold">ClearIt</h1>
+            <h1 className="text-white text-xl font-bold">ClearITT</h1>
           </div>
           
           {/* Right side - Clone & Edit Button */}
@@ -61,7 +61,7 @@ return (
               <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
                 <span className="text-header-bg font-bold text-sm">C</span>
               </div>
-              ClearIt
+              ClearITT
             </div>
           </div>
 <Button
