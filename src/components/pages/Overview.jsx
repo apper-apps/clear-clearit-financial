@@ -46,25 +46,33 @@ const Overview = () => {
       {/* Key Metrics */}
 {/* Main Metrics - 3 Card Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <MetricCard
+<MetricCard
           title="Total Receivables"
-          value={499987.46}
+          value={294115.43}
           icon="TrendingUp"
           color="success"
+          breakdown={[
+            { label: "Clearing", value: 88234.63 },
+            { label: "Paid", value: 205880.80 }
+          ]}
           className="hover:shadow-lg transition-shadow"
         />
         
         <MetricCard
           title="Total Payables"
-          value={191300.42}
+          value={189135.49}
           icon="TrendingDown" 
           color="warning"
+          breakdown={[
+            { label: "Clearing", value: 56740.65 },
+            { label: "Unpaid", value: 132394.84 }
+          ]}
           className="hover:shadow-lg transition-shadow"
         />
 
         <MetricCard
           title="Net Receivable"
-          value={308687.04}
+          value={104979.94}
           icon="DollarSign"
           color="primary"
           change={8.2}
@@ -73,63 +81,130 @@ const Overview = () => {
       </div>
 
       {/* Settlement Summary */}
-{/* Next Settlement Section */}
-<div className="bg-surface rounded-lg border border-slate-200 p-6 shadow-sm">
-<div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-text-primary">Next Settlement</h2>
-          <div className="text-sm text-text-secondary font-medium">
-            {formatDate(nextSettlementDate, "EEEE, dd MMM yyyy")}
+{/* Friday Net Settlement Section */}
+        <div className="bg-surface rounded-lg border border-slate-200 p-6 shadow-sm">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-semibold text-text-primary">Friday net settlement</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column - Summary Cards */}
+            <div className="space-y-4">
+              {/* Receivables Card */}
+              <div className="bg-success rounded-lg text-white p-4">
+                <div className="text-lg font-semibold mb-3">Receivables</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span>Clearing:</span>
+                    <span>{formatCurrency(88234.63)}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-white/20 pb-2">
+                    <span>Paid:</span>
+                    <span className="underline">{formatCurrency(205880.80)}</span>
+                  </div>
+                  <div className="flex justify-between font-bold text-lg">
+                    <span>Total:</span>
+                    <span>{formatCurrency(294115.43)}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Payables Card */}
+              <div className="bg-warning rounded-lg text-white p-4">
+                <div className="text-lg font-semibold mb-3">Payables</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span>Clearing:</span>
+                    <span>{formatCurrency(56740.65)}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-white/20 pb-2">
+                    <span>Unpaid:</span>
+                    <span className="underline">{formatCurrency(132394.84)}</span>
+                  </div>
+                  <div className="flex justify-between font-bold text-lg">
+                    <span>Total:</span>
+                    <span>{formatCurrency(189135.49)}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Horizontal Bar Charts */}
+            <div className="space-y-6">
+              {/* Receivables Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-text-primary">Receivables | {formatCurrency(294115.43)} | 62 invoices</span>
+                </div>
+                <div className="h-8 bg-slate-100 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-success rounded-full transition-all duration-1000"
+                    style={{ width: '60.8%' }} // 294115.43 / (294115.43 + 189135.49) * 100
+                  ></div>
+                </div>
+              </div>
+
+              {/* Payables Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-text-primary">Payables | {formatCurrency(189135.49)} | 15 invoices</span>
+                </div>
+                <div className="h-8 bg-slate-100 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-warning rounded-full transition-all duration-1000"
+                    style={{ width: '39.2%' }} // 189135.49 / (294115.43 + 189135.49) * 100
+                  ></div>
+                </div>
+              </div>
+
+              {/* Net Receivable Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-text-primary">Net receivable</span>
+                  <span className="text-text-primary font-semibold">{formatCurrency(104979.94)}</span>
+                </div>
+                <div className="h-8 bg-slate-100 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-primary rounded-full transition-all duration-1000"
+                    style={{ width: '21.7%' }} // Net as percentage of total receivables
+                  ></div>
+                </div>
+              </div>
+
+              {/* Timeline Indicator */}
+              <div className="pt-4">
+                <div className="h-1 bg-info rounded-full relative">
+                  <div className="absolute left-1/3 top-1/2 w-3 h-3 bg-info rounded-full transform -translate-y-1/2"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div className="text-center p-6 bg-success/10 rounded-lg border border-success/20">
-            <div className="text-2xl font-bold text-success mb-1">
-              {formatCurrency(181904.99)}
-            </div>
-            <div className="text-sm text-text-secondary font-medium">Receivables Clearing</div>
-          </div>
-
-<div className="text-center p-6 bg-warning/10 rounded-lg border border-warning/20">
-            <div className="text-2xl font-bold text-warning mb-1">
-              {formatCurrency(23456.78)}
-            </div>
-            <div className="text-sm text-text-secondary font-medium">Payables Clearing</div>
-          </div>
-
-<div className="text-center p-6 bg-primary/10 rounded-lg border border-primary/20">
-            <div className="text-2xl font-bold text-primary mb-1">
-              {formatCurrency(158448.21)}
-            </div>
-            <div className="text-sm text-text-secondary font-medium">Net Settlement</div>
-          </div>
-        </div>
-      </div>
 
       {/* Quick Stats */}
 {/* Bottom Statistics - 4 Metric Row */}
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-surface p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-          <div className="text-2xl font-bold text-text-primary mb-1">7</div>
-          <div className="text-sm text-text-secondary">Total Receivable Invoices</div>
-        </div>
+          <div className="bg-surface p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-2xl font-bold text-text-primary mb-1">62</div>
+            <div className="text-sm text-text-secondary">Total Receivable Invoices</div>
+          </div>
 
-<div className="bg-surface p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-          <div className="text-2xl font-bold text-text-primary mb-1">4</div>
-          <div className="text-sm text-text-secondary">Total Payable Invoices</div>
-        </div>
-        <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-<div className="text-2xl font-bold text-error mb-1">
-            {formatCurrency(75298.08)}
+          <div className="bg-surface p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-2xl font-bold text-text-primary mb-1">15</div>
+            <div className="text-sm text-text-secondary">Total Payable Invoices</div>
           </div>
-          <div className="text-sm text-text-secondary">Total Overdue</div>
-        </div>
-        <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-<div className="text-2xl font-bold text-success mb-1">
-            {formatCurrency(139710.67)}
+          <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-2xl font-bold text-error mb-1">
+              {formatCurrency(75298.08)}
+            </div>
+            <div className="text-sm text-text-secondary">Total Overdue</div>
           </div>
-          <div className="text-sm text-text-secondary">Paid This Month</div>
-        </div>
+          <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-2xl font-bold text-success mb-1">
+              {formatCurrency(205880.80)}
+            </div>
+            <div className="text-sm text-text-secondary">Paid This Month</div>
+          </div>
       </div>
     </motion.div>
   );
