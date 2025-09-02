@@ -34,8 +34,8 @@ const Overview = () => {
     >
       {/* Page Header */}
 <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Overview Dashboard</h1>
-        <p className="text-slate-600">
+<h1 className="text-3xl font-bold text-text-primary mb-2">Overview Dashboard</h1>
+        <p className="text-text-secondary">
           Monitor your receivables, payables, and upcoming settlements
         </p>
       </div>
@@ -74,63 +74,61 @@ const Overview = () => {
 
       {/* Settlement Summary */}
 {/* Next Settlement Section */}
-      <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-slate-900">Next Settlement</h2>
-          <div className="text-sm text-slate-600 font-medium">
+<div className="bg-surface rounded-lg border border-slate-200 p-6 shadow-sm">
+<div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-semibold text-text-primary">Next Settlement</h2>
+          <div className="text-sm text-text-secondary font-medium">
             {formatDate(nextSettlementDate, "EEEE, dd MMM yyyy")}
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center p-6 bg-green-50 rounded-lg border border-green-200">
-            <div className="text-2xl font-bold text-green-700 mb-1">
+<div className="text-center p-6 bg-success/10 rounded-lg border border-success/20">
+            <div className="text-2xl font-bold text-success mb-1">
               {formatCurrency(181904.99)}
             </div>
-            <div className="text-sm text-slate-600 font-medium">Receivables Clearing</div>
+            <div className="text-sm text-text-secondary font-medium">Receivables Clearing</div>
           </div>
 
-          <div className="text-center p-6 bg-orange-50 rounded-lg border border-orange-200">
-            <div className="text-2xl font-bold text-orange-700 mb-1">
+<div className="text-center p-6 bg-warning/10 rounded-lg border border-warning/20">
+            <div className="text-2xl font-bold text-warning mb-1">
               {formatCurrency(23456.78)}
             </div>
-            <div className="text-sm text-slate-600 font-medium">Payables Clearing</div>
+            <div className="text-sm text-text-secondary font-medium">Payables Clearing</div>
           </div>
 
-          <div className="text-center p-6 bg-teal-50 rounded-lg border border-teal-200">
-            <div className="text-2xl font-bold text-teal-700 mb-1">
+<div className="text-center p-6 bg-primary/10 rounded-lg border border-primary/20">
+            <div className="text-2xl font-bold text-primary mb-1">
               {formatCurrency(158448.21)}
             </div>
-            <div className="text-sm text-slate-600 font-medium">Net Settlement</div>
+            <div className="text-sm text-text-secondary font-medium">Net Settlement</div>
           </div>
         </div>
       </div>
 
       {/* Quick Stats */}
 {/* Bottom Statistics - 4 Metric Row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-          <div className="text-2xl font-bold text-slate-900 mb-1">7</div>
-          <div className="text-sm text-slate-600">Total Receivable Invoices</div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-surface p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div className="text-2xl font-bold text-text-primary mb-1">7</div>
+          <div className="text-sm text-text-secondary">Total Receivable Invoices</div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-          <div className="text-2xl font-bold text-slate-900 mb-1">4</div>
-          <div className="text-sm text-slate-600">Total Payable Invoices</div>
+<div className="bg-surface p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div className="text-2xl font-bold text-text-primary mb-1">4</div>
+          <div className="text-sm text-text-secondary">Total Payable Invoices</div>
         </div>
-
         <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-          <div className="text-2xl font-bold text-error mb-1">
+<div className="text-2xl font-bold text-error mb-1">
             {formatCurrency(75298.08)}
           </div>
-          <div className="text-sm text-slate-600">Total Overdue</div>
+          <div className="text-sm text-text-secondary">Total Overdue</div>
         </div>
-
         <div className="bg-white p-6 rounded-lg border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
-          <div className="text-2xl font-bold text-success mb-1">
+<div className="text-2xl font-bold text-success mb-1">
             {formatCurrency(139710.67)}
           </div>
-          <div className="text-sm text-slate-600">Paid This Month</div>
+          <div className="text-sm text-text-secondary">Paid This Month</div>
         </div>
       </div>
     </motion.div>

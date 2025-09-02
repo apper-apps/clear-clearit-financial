@@ -12,11 +12,11 @@ const Button = forwardRef(({
   const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-lg hover:shadow-xl focus:ring-primary/50",
-    secondary: "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 shadow-sm hover:shadow-md focus:ring-slate/50",
-    ghost: "text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:ring-slate/50",
-    danger: "bg-gradient-to-r from-error to-red-600 hover:from-error/90 hover:to-red-600/90 text-white shadow-lg hover:shadow-xl focus:ring-error/50",
-    success: "bg-gradient-to-r from-success to-emerald-600 hover:from-success/90 hover:to-emerald-600/90 text-white shadow-lg hover:shadow-xl focus:ring-success/50"
+primary: "bg-primary hover:bg-accent text-white shadow-lg hover:shadow-xl focus:ring-primary/50",
+    secondary: "bg-surface border border-slate-300 text-text-primary hover:bg-slate-50 hover:border-slate-400 shadow-sm hover:shadow-md focus:ring-slate/50",
+ghost: "text-text-secondary hover:text-text-primary hover:bg-slate-100 focus:ring-slate/50",
+    danger: "bg-error hover:bg-red-600 text-white shadow-lg hover:shadow-xl focus:ring-error/50",
+success: "bg-success hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl focus:ring-success/50"
   };
   
   const sizes = {

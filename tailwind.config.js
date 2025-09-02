@@ -5,17 +5,35 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
+extend: {
       colors: {
-        primary: '#0F766E',
-        secondary: '#F0FDF4',
-        accent: '#10B981',
-        surface: '#FFFFFF',
-        background: '#F8FAFC',
-        success: '#10B981',
-        warning: '#F59E0B',
-        error: '#EF4444',
-        info: '#3B82F6',
+        // Theme Colors (Exact)
+        primary: '#10b981',      // Primary Green - Emerald/teal
+        secondary: '#f8fafc',    // Very light gray
+        accent: '#059669',       // Darker emerald for gradients
+        surface: '#ffffff',      // Pure white
+        background: '#f8fafc',   // Very light gray
+        
+        // Header & Navigation
+        'header-bg': '#1e293b',  // Dark navy blue
+        'header-alt': '#1a365d', // Alternative navy
+        
+        // Buttons & Actions  
+        'button-coral': '#ef4444', // Coral/red for Clone button
+        
+        // Settlement Banner
+        'settlement-start': '#14b8a6', // Teal gradient start
+        'settlement-end': '#10b981',   // Teal gradient end
+        
+        // Typography
+        'text-primary': '#1f2937',     // Dark gray
+        'text-secondary': '#6b7280',   // Medium gray
+        
+        // Status Colors
+        success: '#10b981',
+        warning: '#f59e0b',
+        error: '#ef4444',
+        info: '#3b82f6',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

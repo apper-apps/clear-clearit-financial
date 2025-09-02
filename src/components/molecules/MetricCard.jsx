@@ -31,7 +31,7 @@ const MetricCard = ({
   }
 
   const colorClasses = {
-    primary: "text-primary bg-primary/10",
+primary: "text-primary bg-primary/10",
     success: "text-success bg-success/10",
     warning: "text-warning bg-warning/10",
     error: "text-error bg-error/10",
@@ -47,7 +47,7 @@ const MetricCard = ({
       <Card className={cn("p-6 hover:shadow-lg transition-all duration-200", className)}>
         <CardContent className="p-0">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-medium text-slate-600">{title}</h3>
+<h3 className="text-sm font-medium text-text-secondary">{title}</h3>
             {icon && (
               <div className={cn(
                 "p-2 rounded-full",
@@ -60,7 +60,7 @@ const MetricCard = ({
           
 <div className="space-y-2">
             <motion.div 
-              className="text-3xl font-bold text-slate-900"
+className="text-3xl font-bold text-text-primary"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.2, delay: 0.1 }}
@@ -86,8 +86,8 @@ const MetricCard = ({
               <div className="space-y-1 pt-2 border-t border-slate-100">
                 {breakdown.map((item, index) => (
                   <div key={index} className="flex justify-between items-center text-sm">
-                    <span className="text-slate-600">{item.label}</span>
-                    <span className="font-medium text-slate-900">
+<span className="text-text-secondary">{item.label}</span>
+                    <span className="font-medium text-text-primary">
                       {formatCurrency(item.value)}
                     </span>
                   </div>

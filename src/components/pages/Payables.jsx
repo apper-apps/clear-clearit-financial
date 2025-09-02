@@ -83,8 +83,8 @@ const Payables = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900">Payables</h1>
-          <p className="text-slate-600 mt-1">
+<h1 className="text-3xl font-bold text-text-primary">Payables</h1>
+          <p className="text-text-secondary mt-1">
             Manage your outgoing payments and bill processing
           </p>
         </div>
@@ -176,35 +176,35 @@ const Payables = () => {
 
       {/* Payment Summary */}
       {filteredInvoices.length > 0 && (
-        <div className="bg-white rounded-lg border border-slate-200 p-6">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">Payment Summary</h3>
+<div className="bg-surface rounded-lg border border-slate-200 p-6">
+          <h3 className="text-lg font-semibold text-text-primary mb-4">Payment Summary</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center p-4 bg-error/5 rounded-lg border border-error/20">
               <div className="text-xl font-bold text-error mb-1">
                 ${invoices?.filter(inv => inv.status === "overdue").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
               </div>
-              <div className="text-sm text-slate-600">Overdue Amount</div>
+<div className="text-sm text-text-secondary">Overdue Amount</div>
             </div>
 
             <div className="text-center p-4 bg-warning/5 rounded-lg border border-warning/20">
               <div className="text-xl font-bold text-warning mb-1">
                 ${invoices?.filter(inv => inv.status === "unpaid").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
               </div>
-              <div className="text-sm text-slate-600">Unpaid Amount</div>
+<div className="text-sm text-text-secondary">Unpaid Amount</div>
             </div>
 
             <div className="text-center p-4 bg-info/5 rounded-lg border border-info/20">
               <div className="text-xl font-bold text-info mb-1">
                 ${invoices?.filter(inv => inv.status === "scheduled").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
               </div>
-              <div className="text-sm text-slate-600">Scheduled Amount</div>
+<div className="text-sm text-text-secondary">Scheduled Amount</div>
             </div>
 
             <div className="text-center p-4 bg-success/5 rounded-lg border border-success/20">
               <div className="text-xl font-bold text-success mb-1">
                 ${invoices?.filter(inv => inv.status === "clearing").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
               </div>
-              <div className="text-sm text-slate-600">Clearing Amount</div>
+<div className="text-sm text-text-secondary">Clearing Amount</div>
             </div>
           </div>
         </div>

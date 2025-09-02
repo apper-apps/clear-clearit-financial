@@ -22,8 +22,8 @@ const SettlementBanner = ({ className }) => {
     <motion.div
 initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`settlement-banner flex items-center justify-between p-4 rounded-lg ${className}`}
-      style={{ background: 'linear-gradient(135deg, #0F766E, #10B981)' }}
+className={`settlement-banner flex items-center justify-between p-4 rounded-lg ${className}`}
+      style={{ background: 'linear-gradient(135deg, #14b8a6, #10b981)' }}
     >
       <div className="flex items-center space-x-3">
         <div className="p-2 bg-white/20 rounded-full">

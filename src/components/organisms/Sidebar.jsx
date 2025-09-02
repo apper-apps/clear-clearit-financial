@@ -78,8 +78,8 @@ const Sidebar = ({ className }) => {
           className={cn(
 "flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group",
             isActive
-              ? "bg-green-500 text-white shadow-lg"
-              : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+              ? "bg-primary text-white shadow-lg"
+              : "text-text-primary hover:bg-slate-100 hover:text-slate-900"
           )}
         >
           <ApperIcon
@@ -87,8 +87,8 @@ const Sidebar = ({ className }) => {
             size={18}
             className={cn(
               "mr-3 transition-colors duration-200",
-              isActive 
-                ? "text-white" 
+isActive 
+                ? "text-white"
                 : "text-slate-500 group-hover:text-slate-700"
             )}
           />
@@ -99,12 +99,12 @@ const Sidebar = ({ className }) => {
   };
 
   return (
-<div className={cn("bg-white border-r border-slate-200 h-full flex flex-col", className)}>
+<div className={cn("bg-secondary border-r border-slate-200 h-full flex flex-col", className)}>
       {/* Navigation - No logo needed as header has it */}
       <nav className="flex-1 px-4 py-6 space-y-6">
         {/* CORE Section */}
         <div className="space-y-2">
-          <h3 className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">
+<h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
             CORE
           </h3>
           {groupedNavigation.high.map((item, index) => (
@@ -113,8 +113,8 @@ const Sidebar = ({ className }) => {
         </div>
 
         {/* ANALYTICS Section */}
-        <div className="space-y-2">
-          <h3 className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">
+<div className="space-y-2">
+          <h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
             ANALYTICS
           </h3>
           {groupedNavigation.medium.map((item, index) => (
@@ -122,9 +122,9 @@ const Sidebar = ({ className }) => {
           ))}
         </div>
 
-        {/* SETTINGS Section */}
+{/* SETTINGS Section */}
         <div className="space-y-2">
-          <h3 className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">
+          <h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
             SETTINGS
           </h3>
           {groupedNavigation.low.map((item, index) => (
@@ -134,8 +134,8 @@ const Sidebar = ({ className }) => {
       </nav>
 
       {/* API STATUS Section */}
-      <div className="p-4 border-t border-slate-200">
-        <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
+<div className="p-4 border-t border-slate-200">
+        <h4 className="text-xs font-semibold text-text-secondary uppercase tracking-wide mb-3">
           API STATUS
         </h4>
         <div className="space-y-2">
@@ -147,16 +147,16 @@ const Sidebar = ({ className }) => {
               transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
               className="flex items-center justify-between px-2 py-1.5 rounded-md hover:bg-slate-50"
             >
-              <span className="text-sm text-slate-600 font-medium">{integration.name}</span>
+<span className="text-sm text-text-secondary font-medium">{integration.name}</span>
               <ApperIcon
                 name={integration.icon}
                 size={16}
                 className={cn(
-                  integration.status === "connected" 
-                    ? "text-green-600" 
+integration.status === "connected" 
+                    ? "text-success" 
                     : integration.status === "active" 
-                    ? "text-yellow-500" 
-                    : "text-slate-400"
+                    ? "text-warning" 
+                    : "text-text-secondary"
                 )}
               />
             </motion.div>

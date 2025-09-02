@@ -11,22 +11,22 @@ const Layout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 return (
-    <div className="min-h-screen bg-background">
+<div className="min-h-screen bg-surface">
       {/* Desktop Header */}
-      <div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-blue-900 h-16 shadow-lg">
+<div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-header-bg h-16 shadow-lg">
         <div className="flex items-center justify-between h-full px-6">
           {/* Left side - Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-              <span className="text-blue-900 font-bold text-lg">C</span>
+<div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
+              <span className="text-header-bg font-bold text-lg">C</span>
             </div>
             <h1 className="text-white text-xl font-bold">ClearIt</h1>
           </div>
           
           {/* Right side - Clone & Edit Button */}
-          <Button
+<Button
             variant="secondary"
-            className="bg-red-600 hover:bg-red-700 text-white border-0 px-4 py-2"
+            className="bg-button-coral hover:bg-red-700 text-white border-0 px-4 py-2"
           >
             <ApperIcon name="Download" size={16} className="mr-2" />
             Clone & Edit
@@ -46,9 +46,9 @@ return (
       />
 
       {/* Main Content */}
-      <div className="lg:pl-72 lg:pt-16">
+<div className="lg:pl-72 lg:pt-16">
         {/* Mobile Header */}
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-blue-900 px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-header-bg px-4 py-4 shadow-sm sm:px-6 lg:hidden">
           <Button
             variant="ghost"
             onClick={() => setMobileMenuOpen(true)}
@@ -57,16 +57,16 @@ return (
             <ApperIcon name="Menu" size={24} />
           </Button>
           <div className="flex-1 text-sm font-semibold leading-6 text-white">
-            <div className="flex items-center">
+<div className="flex items-center">
               <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
-                <span className="text-blue-900 font-bold text-sm">C</span>
+                <span className="text-header-bg font-bold text-sm">C</span>
               </div>
               ClearIt
             </div>
           </div>
-          <Button
+<Button
             variant="secondary"
-            className="bg-red-600 hover:bg-red-700 text-white border-0 px-3 py-1 text-xs"
+            className="bg-button-coral hover:bg-red-700 text-white border-0 px-3 py-1 text-xs"
           >
             <ApperIcon name="Download" size={14} className="mr-1" />
             Clone
