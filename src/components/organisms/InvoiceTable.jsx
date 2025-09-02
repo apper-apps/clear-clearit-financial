@@ -21,9 +21,34 @@ const InvoiceTable = ({
   onSelectionChange,
   type = "receivable"
 }) => {
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
+const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
   const [editingInvoice, setEditingInvoice] = useState(null);
   const [editValues, setEditValues] = useState({});
+
+  const sortedInvoices = React.useMemo(() => {
+    if (!sortConfig.key) return invoices;
+
+    return [...invoices].sort((a, b) => {
+      let aVal = a[sortConfig.key];
+      let bVal = b[sortConfig.key];
+
+      // Handle different data types
+      if (sortConfig.key === "amount") {
+        aVal = parseFloat(aVal) || 0;
+        bVal = parseFloat(bVal) || 0;
+      } else if (sortConfig.key === "dueDate" || sortConfig.key === "paidDate") {
+        aVal = new Date(aVal || 0);
+        bVal = new Date(bVal || 0);
+      } else {
+        aVal = String(aVal || "").toLowerCase();
+        bVal = String(bVal || "").toLowerCase();
+      }
+
+      if (aVal < bVal) return sortConfig.direction === "asc" ? -1 : 1;
+      if (aVal > bVal) return sortConfig.direction === "asc" ? 1 : -1;
+      return 0;
+    });
+  }, [invoices, sortConfig]);
 
   if (loading) {
     return <Loading type="table" />;
@@ -57,31 +82,6 @@ const InvoiceTable = ({
     }
     setSortConfig({ key, direction });
   };
-
-  const sortedInvoices = React.useMemo(() => {
-    if (!sortConfig.key) return invoices;
-
-    return [...invoices].sort((a, b) => {
-      let aVal = a[sortConfig.key];
-      let bVal = b[sortConfig.key];
-
-      // Handle different data types
-      if (sortConfig.key === "amount") {
-        aVal = parseFloat(aVal) || 0;
-        bVal = parseFloat(bVal) || 0;
-      } else if (sortConfig.key === "dueDate" || sortConfig.key === "paidDate") {
-        aVal = new Date(aVal || 0);
-        bVal = new Date(bVal || 0);
-      } else {
-        aVal = String(aVal || "").toLowerCase();
-        bVal = String(bVal || "").toLowerCase();
-      }
-
-      if (aVal < bVal) return sortConfig.direction === "asc" ? -1 : 1;
-      if (aVal > bVal) return sortConfig.direction === "asc" ? 1 : -1;
-      return 0;
-    });
-  }, [invoices, sortConfig]);
 
   const handleSelectAll = (checked) => {
     if (checked) {
