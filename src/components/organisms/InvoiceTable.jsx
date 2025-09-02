@@ -141,8 +141,8 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
     </button>
   );
 
-  const EditableCell = ({ value, field, type = "text" }) => {
-    if (editingInvoice) {
+const EditableCell = ({ value, field, type = "text", invoiceId }) => {
+    if (editingInvoice === invoiceId) {
       return (
         <Input
           type={type}
@@ -243,11 +243,12 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
                         className="rounded border-slate-300 text-primary focus:ring-primary/50"
                       />
                     </td>
-                    <td className="px-4 py-4">
+<td className="px-4 py-4">
                       <EditableCell 
                         value={invoice.amount} 
                         field="amount" 
                         type="currency" 
+                        invoiceId={invoice.Id}
                       />
                     </td>
                     <td className="px-4 py-4">
@@ -270,14 +271,16 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
                     </td>
                     <td className="px-4 py-4">
                       <div className="space-y-1">
-                        <EditableCell 
+<EditableCell 
                           value={invoice.companyName} 
                           field="companyName" 
+                          invoiceId={invoice.Id}
                         />
                         {invoice.contactName && (
                           <EditableCell 
                             value={invoice.contactName} 
                             field="contactName" 
+                            invoiceId={invoice.Id}
                           />
                         )}
                       </div>

@@ -99,12 +99,12 @@ isActive
   };
 
   return (
-<div className={cn("bg-secondary border-r border-slate-200 h-full flex flex-col", className)}>
+<div className={cn("border-r border-slate-200 h-full flex flex-col", className)}>
       {/* Navigation - No logo needed as header has it */}
-      <nav className="flex-1 px-4 py-6 space-y-6">
+<nav className="flex-1 px-4 py-6 space-y-6 bg-secondary h-full">
         {/* CORE Section */}
         <div className="space-y-2">
-<h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
+          <h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
             CORE
           </h3>
           {groupedNavigation.high.map((item, index) => (
@@ -113,7 +113,7 @@ isActive
         </div>
 
         {/* ANALYTICS Section */}
-<div className="space-y-2">
+        <div className="space-y-2">
           <h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
             ANALYTICS
           </h3>
@@ -122,7 +122,7 @@ isActive
           ))}
         </div>
 
-{/* SETTINGS Section */}
+        {/* SETTINGS Section */}
         <div className="space-y-2">
           <h3 className="px-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">
             SETTINGS
