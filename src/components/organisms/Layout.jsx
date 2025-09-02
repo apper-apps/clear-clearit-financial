@@ -10,10 +10,32 @@ import ApperIcon from "@/components/ApperIcon";
 const Layout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  return (
+return (
     <div className="min-h-screen bg-background">
+      {/* Desktop Header */}
+      <div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-blue-900 h-16 shadow-lg">
+        <div className="flex items-center justify-between h-full px-6">
+          {/* Left side - Logo */}
+          <div className="flex items-center">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
+              <span className="text-blue-900 font-bold text-lg">C</span>
+            </div>
+            <h1 className="text-white text-xl font-bold">ClearIt</h1>
+          </div>
+          
+          {/* Right side - Clone & Edit Button */}
+          <Button
+            variant="secondary"
+            className="bg-red-600 hover:bg-red-700 text-white border-0 px-4 py-2"
+          >
+            <ApperIcon name="Download" size={16} className="mr-2" />
+            Clone & Edit
+          </Button>
+        </div>
+      </div>
+
       {/* Desktop Sidebar */}
-      <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-72 lg:flex-col">
+      <div className="hidden lg:fixed lg:inset-y-16 lg:flex lg:w-72 lg:flex-col">
         <Sidebar />
       </div>
 
@@ -24,27 +46,34 @@ const Layout = () => {
       />
 
       {/* Main Content */}
-      <div className="lg:pl-72">
+      <div className="lg:pl-72 lg:pt-16">
         {/* Mobile Header */}
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-blue-900 px-4 py-4 shadow-sm sm:px-6 lg:hidden">
           <Button
             variant="ghost"
             onClick={() => setMobileMenuOpen(true)}
-            className="p-2 text-slate-700"
+            className="p-2 text-white"
           >
             <ApperIcon name="Menu" size={24} />
           </Button>
-          <div className="flex-1 text-sm font-semibold leading-6 text-slate-900">
+          <div className="flex-1 text-sm font-semibold leading-6 text-white">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-gradient-to-r from-primary to-accent rounded-md flex items-center justify-center mr-2">
-                <ApperIcon name="DollarSign" size={16} className="text-white" />
+              <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
+                <span className="text-blue-900 font-bold text-sm">C</span>
               </div>
               ClearIt
             </div>
           </div>
+          <Button
+            variant="secondary"
+            className="bg-red-600 hover:bg-red-700 text-white border-0 px-3 py-1 text-xs"
+          >
+            <ApperIcon name="Download" size={14} className="mr-1" />
+            Clone
+          </Button>
         </div>
 
-        {/* Page Content */}
+        {/* Main Content */}
         <main className="min-h-screen">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -76,9 +76,9 @@ const Sidebar = ({ className }) => {
         <NavLink
           to={item.path}
           className={cn(
-            "flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group",
+"flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group",
             isActive
-              ? "bg-gradient-to-r from-primary to-accent text-white shadow-lg"
+              ? "bg-green-500 text-white shadow-lg"
               : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
           )}
         >
@@ -99,47 +99,33 @@ const Sidebar = ({ className }) => {
   };
 
   return (
-    <div className={cn("bg-white border-r border-slate-200 h-full flex flex-col", className)}>
-      {/* Logo */}
-      <div className="p-6 border-b border-slate-200">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex items-center"
-        >
-          <div className="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mr-3">
-            <ApperIcon name="DollarSign" size={20} className="text-white" />
-          </div>
-          <h1 className="text-xl font-bold text-gradient">ClearIt</h1>
-        </motion.div>
-      </div>
-
-      {/* Navigation */}
+<div className={cn("bg-white border-r border-slate-200 h-full flex flex-col", className)}>
+      {/* Navigation - No logo needed as header has it */}
       <nav className="flex-1 px-4 py-6 space-y-6">
-        {/* High Priority */}
+        {/* CORE Section */}
         <div className="space-y-2">
           <h3 className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">
-            Core
+            CORE
           </h3>
           {groupedNavigation.high.map((item, index) => (
             <NavItem key={item.path} item={item} index={index} />
           ))}
         </div>
 
-        {/* Medium Priority */}
+        {/* ANALYTICS Section */}
         <div className="space-y-2">
           <h3 className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">
-            Analytics
+            ANALYTICS
           </h3>
           {groupedNavigation.medium.map((item, index) => (
             <NavItem key={item.path} item={item} index={index + 3} />
           ))}
         </div>
 
-        {/* Low Priority */}
+        {/* SETTINGS Section */}
         <div className="space-y-2">
           <h3 className="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wide">
-            Settings
+            SETTINGS
           </h3>
           {groupedNavigation.low.map((item, index) => (
             <NavItem key={item.path} item={item} index={index + 5} />
@@ -147,10 +133,10 @@ const Sidebar = ({ className }) => {
         </div>
       </nav>
 
-      {/* API Integration Status */}
+      {/* API STATUS Section */}
       <div className="p-4 border-t border-slate-200">
         <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
-          API Status
+          API STATUS
         </h4>
         <div className="space-y-2">
           {apiIntegrations.map((integration, index) => (
@@ -161,15 +147,15 @@ const Sidebar = ({ className }) => {
               transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
               className="flex items-center justify-between px-2 py-1.5 rounded-md hover:bg-slate-50"
             >
-              <span className="text-sm text-slate-600">{integration.name}</span>
+              <span className="text-sm text-slate-600 font-medium">{integration.name}</span>
               <ApperIcon
                 name={integration.icon}
-                size={14}
+                size={16}
                 className={cn(
                   integration.status === "connected" 
-                    ? "text-success" 
+                    ? "text-green-600" 
                     : integration.status === "active" 
-                    ? "text-primary" 
+                    ? "text-yellow-500" 
                     : "text-slate-400"
                 )}
               />

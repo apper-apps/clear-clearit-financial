@@ -107,12 +107,12 @@ const MobileSidebar = ({ isOpen, onClose }) => {
             className="fixed left-0 top-0 h-full w-80 bg-white border-r border-slate-200 z-50 lg:hidden flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-200">
+<div className="flex items-center justify-between p-6 border-b border-slate-200">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mr-3">
-                  <ApperIcon name="DollarSign" size={20} className="text-white" />
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-900 font-bold text-lg">C</span>
                 </div>
-                <h1 className="text-xl font-bold text-gradient">ClearIt</h1>
+                <h1 className="text-xl font-bold text-slate-900">ClearIt</h1>
               </div>
               <button
                 onClick={onClose}

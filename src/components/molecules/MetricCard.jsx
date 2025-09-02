@@ -58,9 +58,9 @@ const MetricCard = ({
             )}
           </div>
           
-          <div className="space-y-2">
+<div className="space-y-2">
             <motion.div 
-              className="text-2xl font-bold text-slate-900"
+              className="text-3xl font-bold text-slate-900"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.2, delay: 0.1 }}
