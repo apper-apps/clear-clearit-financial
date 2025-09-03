@@ -6,11 +6,11 @@ export default {
   ],
   theme: {
 extend: {
-colors: {
-        // Theme Colors (Updated)
-        primary: '#5BF297',      // New primary theme color
+      colors: {
+        // Theme Colors (Exact)
+        primary: '#10b981',      // Primary Green - Emerald/teal
         secondary: '#f8fafc',    // Very light gray
-        accent: '#22C55E',       // Darker shade for gradients
+        accent: '#059669',       // Darker emerald for gradients
         surface: '#ffffff',      // Pure white
         background: '#f8fafc',   // Very light gray
         
@@ -22,15 +22,15 @@ colors: {
         'button-coral': '#ef4444', // Coral/red for Clone button
         
         // Settlement Banner
-        'settlement-start': '#5BF297', // New theme color gradient start
-        'settlement-end': '#22C55E',   // New theme color gradient end
+        'settlement-start': '#14b8a6', // Teal gradient start
+        'settlement-end': '#10b981',   // Teal gradient end
         
         // Typography
         'text-primary': '#1f2937',     // Dark gray
         'text-secondary': '#6b7280',   // Medium gray
         
         // Status Colors
-        success: '#5BF297',
+        success: '#10b981',
         warning: '#f59e0b',
         error: '#ef4444',
         info: '#3b82f6',

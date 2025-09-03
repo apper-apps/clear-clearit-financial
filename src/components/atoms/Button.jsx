@@ -16,7 +16,7 @@ primary: "bg-primary hover:bg-accent text-white shadow-lg hover:shadow-xl focus:
     secondary: "bg-surface border border-slate-300 text-text-primary hover:bg-slate-50 hover:border-slate-400 shadow-sm hover:shadow-md focus:ring-slate/50",
 ghost: "text-text-secondary hover:text-text-primary hover:bg-slate-100 focus:ring-slate/50",
     danger: "bg-error hover:bg-red-600 text-white shadow-lg hover:shadow-xl focus:ring-error/50",
-success: "bg-success hover:bg-accent text-white shadow-lg hover:shadow-xl focus:ring-success/50"
+success: "bg-success hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl focus:ring-success/50"
   };
   
   const sizes = {

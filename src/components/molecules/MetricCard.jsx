@@ -32,8 +32,8 @@ const MetricCard = ({
 
   const colorClasses = {
 primary: "text-primary bg-primary/10",
-success: "text-success bg-success/10",
-positive: "text-success bg-success/10",
+    success: "text-success bg-success/10", 
+    positive: "text-success bg-success/10",
     warning: "text-warning bg-warning/10",
     attention: "text-warning bg-warning/10",
     error: "text-error bg-error/10",
@@ -74,7 +74,7 @@ className="text-2xl font-bold text-text-primary"
             
             {change && (
               <div className={cn(
-"flex items-center text-sm",
+                "flex items-center text-sm",
                 change > 0 ? "text-success" : change < 0 ? "text-error" : "text-slate-500"
               )}>
                 <ApperIcon 

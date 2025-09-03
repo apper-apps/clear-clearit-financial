@@ -91,7 +91,7 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
             <ApperIcon name="Upload" size={16} className="mr-2" />
             Upload
           </Button>
-<Button variant="primary" onClick={() => toast.info("Coming soon...")}>
+          <Button variant="primary" onClick={() => toast.info("Coming soon...")}>
             <ApperIcon name="Plus" size={16} className="mr-2" />
             Create
           </Button>

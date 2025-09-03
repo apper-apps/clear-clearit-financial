@@ -103,7 +103,7 @@ const { summary, loading, error, loadSummary } = useInvoiceSummary();
                 </div>
                 <div className="h-8 bg-slate-100 rounded-full overflow-hidden">
                   <div 
-className="h-full bg-success rounded-full transition-all duration-1000"
+                    className="h-full bg-success rounded-full transition-all duration-1000"
 style={{ width: summary ? `${((summary.receivables?.total || 0) / ((summary.receivables?.total || 0) + (summary.payables?.total || 0))) * 100}%` : '60.8%' }}
                   ></div>
                 </div>
