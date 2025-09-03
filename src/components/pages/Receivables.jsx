@@ -64,7 +64,7 @@ const Receivables = () => {
       : filteredInvoices;
     
     console.log("Exporting CSV for:", dataToExport);
-    toast.success(`Exported ${dataToExport.length} invoices to CSV`);
+    toast.success(`Coming soon...`);
   };
 
   return (
@@ -83,15 +83,15 @@ const Receivables = () => {
         </div>
         
         <div className="flex items-center gap-3">
-          <Button variant="secondary" onClick={() => toast.info("Fetching latest data...")}>
+          <Button variant="secondary" onClick={() => toast.info("Coming soon...")}>
             <ApperIcon name="RefreshCw" size={16} className="mr-2" />
             Fetch
           </Button>
-          <Button variant="secondary" onClick={() => toast.info("Upload dialog opened")}>
+          <Button variant="secondary" onClick={() => toast.info("Coming soon...")}>
             <ApperIcon name="Upload" size={16} className="mr-2" />
             Upload
           </Button>
-          <Button variant="primary" onClick={() => toast.info("Create invoice dialog opened")}>
+          <Button variant="primary" onClick={() => toast.info("Coming soon...")}>
             <ApperIcon name="Plus" size={16} className="mr-2" />
             Create
           </Button>
