@@ -68,7 +68,7 @@ const MobileSidebar = ({ isOpen, onClose }) => {
         className={cn(
           "flex items-center px-4 py-3 text-base font-medium transition-all duration-200",
 isActive
-            ? "bg-primary text-white shadow-lg rounded-lg mx-4"
+? "bg-primary text-white shadow-lg rounded-lg mx-4"
             : "text-text-primary hover:bg-slate-100 hover:text-slate-900 hover:rounded-lg hover:mx-4"
         )}
       >

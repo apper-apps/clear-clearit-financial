@@ -78,7 +78,7 @@ const Sidebar = ({ className }) => {
           className={cn(
 "flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group",
             isActive
-              ? "bg-primary text-white shadow-lg"
+? "bg-primary text-white shadow-lg"
               : "text-text-primary hover:bg-slate-100 hover:text-slate-900"
           )}
         >
@@ -153,7 +153,7 @@ isActive
                 size={16}
                 className={cn(
 integration.status === "connected" 
-                    ? "text-success" 
+                    ? "text-success"
                     : integration.status === "active" 
                     ? "text-warning" 
                     : "text-text-secondary"

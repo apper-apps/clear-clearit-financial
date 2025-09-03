@@ -100,7 +100,7 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
           <Button variant="secondary" onClick={() => toast.info("Coming soon...")}>
                 <ApperIcon name="Upload" size={16} className="mr-2" />Upload
                           </Button>
-          <Button variant="primary" onClick={() => toast.info("Coming soon...")}>
+<Button variant="primary" onClick={() => toast.info("Coming soon...")}>
                 <ApperIcon name="Plus" size={16} className="mr-2" />Create
                           </Button>
         </div>
@@ -172,7 +172,7 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
                 </div>
                 <div className="text-sm text-text-secondary">Scheduled Amount</div>
             </div>
-            <div
+<div
                 className="text-center p-4 bg-success/5 rounded-lg border border-success/20">
                 <div className="text-xl font-bold text-success mb-1">${invoices?.filter(inv => inv.status === "clearing").reduce((sum, inv) => sum + (inv.amount || 0), 0).toLocaleString() || "0"}
                 </div>

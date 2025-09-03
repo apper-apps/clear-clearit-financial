@@ -55,7 +55,7 @@ const Loading = ({ type = "default" }) => {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
-            className="w-3 h-3 bg-primary rounded-full"
+className="w-3 h-3 bg-primary rounded-full"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.5, 1, 0.5],

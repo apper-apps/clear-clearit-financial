@@ -35,7 +35,7 @@
 }
 
 .Toastify__toast--success {
-  background: linear-gradient(135deg, #10B981, #059669);
+  background: linear-gradient(135deg, #5BF297, #22C55E);
   color: white;
 }
 
@@ -82,7 +82,7 @@ p {
 
 /* Custom utilities */
 .text-gradient {
-  background: linear-gradient(135deg, #0F766E, #10B981);
+  background: linear-gradient(135deg, #22C55E, #5BF297);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -141,11 +141,11 @@ p {
 
 /* Settlement banner */
 .settlement-banner {
-  background: linear-gradient(135deg, #0F766E, #10B981);
+  background: linear-gradient(135deg, #22C55E, #5BF297);
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 4px 12px rgba(91, 242, 151, 0.2);
 }
 
 /* Australian specific styling */
@@ -156,9 +156,8 @@ p {
 
 .currency-aud {
   font-weight: 600;
-  color: #0F766E;
+  color: #22C55E;
 }
-
 /* Tooltip styling */
 .tooltip-container:hover .tooltip {
   opacity: 1;
