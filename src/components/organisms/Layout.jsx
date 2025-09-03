@@ -24,13 +24,6 @@ return (
           </div>
           
           {/* Right side - Clone & Edit Button */}
-<Button
-            variant="secondary"
-            className="bg-button-coral hover:bg-red-700 text-white border-0 px-4 py-2"
-          >
-            <ApperIcon name="Download" size={16} className="mr-2" />
-            Clone & Edit
-          </Button>
         </div>
       </div>
 
@@ -64,14 +57,7 @@ return (
               ClearITT
             </div>
           </div>
-<Button
-            variant="secondary"
-            className="bg-button-coral hover:bg-red-700 text-white border-0 px-3 py-1 text-xs"
-          >
-            <ApperIcon name="Download" size={14} className="mr-1" />
-            Clone
-          </Button>
-        </div>
+</div>
 
         {/* Main Content */}
         <main className="min-h-screen">
