@@ -219,7 +219,10 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                 <SortButton column="paidDate">Paid Date</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
-                <SortButton column="companyName">Company</SortButton>
+<SortButton column="companyName">Company</SortButton>
+              </th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wide">
+                <SortButton column="contactName">Contact</SortButton>
               </th>
               <th className="px-4 py-3 text-left">
 <SortButton column="invoiceNumber">Invoice #</SortButton>
@@ -290,21 +293,19 @@ checked={isSelected}
 <td className="px-4 py-4 text-sm text-slate-600">
                       {invoice.paidDate ? formatDate(invoice.paidDate) : "-"}
                     </td>
+<td className="px-4 py-4">
+                      <EditableCell 
+                        value={invoice.companyName} 
+                        field="companyName" 
+                        invoiceId={invoice.Id}
+                      />
+                    </td>
                     <td className="px-4 py-4">
-                      <div className="space-y-1">
-<EditableCell 
-                          value={invoice.companyName} 
-                          field="companyName" 
-                          invoiceId={invoice.Id}
-                        />
-                        {invoice.contactName && (
-                          <EditableCell 
-                            value={invoice.contactName} 
-                            field="contactName" 
-                            invoiceId={invoice.Id}
-                          />
-                        )}
-                      </div>
+                      <EditableCell 
+                        value={invoice.contactName} 
+                        field="contactName" 
+                        invoiceId={invoice.Id}
+                      />
                     </td>
 <td className="px-4 py-4 font-mono text-sm">
                       {invoice.invoiceNumber}
