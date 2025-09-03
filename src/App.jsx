@@ -19,8 +19,8 @@ function App() {
           <Route path="payables" element={<Payables />} />
           <Route path="forecast" element={<Forecast />} />
           <Route path="history" element={<History />} />
-          <Route path="my-business" element={<MyBusiness />} />
-          <Route path="my-network" element={<MyNetwork />} />
+<Route path="business" element={<MyBusiness />} />
+          <Route path="network" element={<MyNetwork />} />
         </Route>
       </Routes>
     </BrowserRouter>
