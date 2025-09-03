@@ -11,8 +11,29 @@ import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
 import { cn } from "@/utils/cn";
 
+// Tooltip component for action buttons
+const Tooltip = ({ children, text, position = "top" }) => {
+  return (
+    <div className="relative inline-flex tooltip-container">
+      {children}
+      <div className={cn(
+        "tooltip absolute z-50 px-2 py-1 text-xs font-medium text-white bg-slate-900 rounded shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap",
+        position === "top" && "bottom-full left-1/2 transform -translate-x-1/2 mb-2",
+        position === "bottom" && "top-full left-1/2 transform -translate-x-1/2 mt-2"
+      )}>
+        {text}
+        <div className={cn(
+          "absolute w-2 h-2 bg-slate-900 transform rotate-45",
+          position === "top" && "top-full left-1/2 -translate-x-1/2 -mt-1",
+          position === "bottom" && "bottom-full left-1/2 -translate-x-1/2 -mb-1"
+        )} />
+      </div>
+    </div>
+  );
+};
+
 const InvoiceTable = ({ 
-  invoices = [], 
+  invoices = [],
   loading = false, 
   error = null, 
   onRetry, 
@@ -318,20 +339,24 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                           </>
                         ) : (
                           <>
-                            <Button
-                              size="small"
-                              variant="ghost"
-                              onClick={() => startEditing(invoice)}
-                            >
-                              <ApperIcon name="Edit3" size={14} />
-                            </Button>
-                            <Button
-                              size="small"
-                              variant="ghost"
-                              onClick={() => onStatusUpdate?.(invoice.Id, "paid")}
-                            >
-                              <ApperIcon name="CheckCircle" size={14} />
-                            </Button>
+<Tooltip text="Edit Invoice Details">
+                              <Button
+                                size="small"
+                                variant="ghost"
+                                onClick={() => startEditing(invoice)}
+                              >
+                                <ApperIcon name="Edit3" size={14} />
+                              </Button>
+                            </Tooltip>
+                            <Tooltip text="Mark as Paid">
+                              <Button
+                                size="small"
+                                variant="ghost"
+                                onClick={() => onStatusUpdate?.(invoice.Id, "paid")}
+                              >
+                                <ApperIcon name="CheckCircle" size={14} />
+                              </Button>
+                            </Tooltip>
                           </>
                         )}
 </div>

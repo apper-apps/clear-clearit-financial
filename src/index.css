@@ -158,3 +158,24 @@ p {
   font-weight: 600;
   color: #0F766E;
 }
+
+/* Tooltip styling */
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.tooltip {
+  z-index: 1000;
+  font-size: 11px;
+  line-height: 1.2;
+  max-width: 200px;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
