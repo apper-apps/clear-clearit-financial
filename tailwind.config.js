@@ -7,30 +7,30 @@ export default {
   theme: {
 extend: {
 colors: {
-        // Theme Colors (Updated)
-        primary: '#5BF297',      // New primary theme color
-        secondary: '#f8fafc',    // Very light gray
-        accent: '#22C55E',       // Darker shade for gradients
-        surface: '#ffffff',      // Pure white
-        background: '#f8fafc',   // Very light gray
+        // Dark Jungle Green Theme Colors
+        primary: '#22F58A',          // Vibrant Green (Primary Accent & CTA)
+        secondary: '#ffffff',        // White (surface)
+        accent: '#A2FECD',          // Light Pastel Green (Headings)
+        surface: '#ffffff',          // White (Pure white)
+        background: '#111814',       // Dark Jungle Green (Main Background)
         
         // Header & Navigation
-        'header-bg': '#1e293b',  // Dark navy blue
-        'header-alt': '#1a365d', // Alternative navy
+        'header-bg': '#111814',      // Dark Jungle Green
+        'header-alt': '#0f1612',     // Darker variant
         
         // Buttons & Actions  
-        'button-coral': '#ef4444', // Coral/red for Clone button
+        'button-coral': '#ef4444',   // Coral/red for Clone button
         
         // Settlement Banner
-        'settlement-start': '#5BF297', // New theme color gradient start
-        'settlement-end': '#22C55E',   // New theme color gradient end
+        'settlement-start': '#22F58A', // Vibrant Green gradient start
+        'settlement-end': '#A2FECD',   // Light Pastel Green gradient end
         
         // Typography
-        'text-primary': '#1f2937',     // Dark gray
-        'text-secondary': '#6b7280',   // Medium gray
+        'text-primary': '#FFFFFF',     // White (Body Text & Highlights)
+        'text-secondary': '#E8E8E8',   // Light Grey (Secondary Text)
         
         // Status Colors
-        success: '#5BF297',
+        success: '#22F58A',          // Vibrant Green
         warning: '#f59e0b',
         error: '#ef4444',
         info: '#3b82f6',

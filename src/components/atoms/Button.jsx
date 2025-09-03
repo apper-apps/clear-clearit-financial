@@ -12,11 +12,11 @@ const Button = forwardRef(({
   const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-primary: "bg-primary hover:bg-accent text-white shadow-lg hover:shadow-xl focus:ring-primary/50",
-    secondary: "bg-surface border border-slate-300 text-text-primary hover:bg-slate-50 hover:border-slate-400 shadow-sm hover:shadow-md focus:ring-slate/50",
-ghost: "text-text-secondary hover:text-text-primary hover:bg-slate-100 focus:ring-slate/50",
-    danger: "bg-error hover:bg-red-600 text-white shadow-lg hover:shadow-xl focus:ring-error/50",
-success: "bg-success hover:bg-accent text-white shadow-lg hover:shadow-xl focus:ring-success/50"
+primary: "bg-primary hover:bg-accent text-background shadow-lg hover:shadow-xl focus:ring-primary/50",
+secondary: "bg-surface border border-text-secondary text-background hover:bg-text-secondary/10 hover:border-text-primary shadow-sm hover:shadow-md focus:ring-slate/50",
+ghost: "text-text-secondary hover:text-text-primary hover:bg-text-secondary/10 focus:ring-slate/50",
+danger: "bg-error hover:bg-red-600 text-white shadow-lg hover:shadow-xl focus:ring-error/50",
+success: "bg-success hover:bg-accent text-background shadow-lg hover:shadow-xl focus:ring-success/50"
   };
   
   const sizes = {

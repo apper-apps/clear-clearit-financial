@@ -15,22 +15,22 @@ const Layout = () => {
   const { user } = useSelector((state) => state.user);
 
   return (
-    <div className="min-h-screen bg-surface">
+<div className="min-h-screen bg-background">
       {/* Desktop Header */}
       <div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-header-bg h-16 shadow-lg">
         <div className="flex items-center justify-between h-full px-6">
           {/* Left side - Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-              <span className="text-header-bg font-bold text-lg">C</span>
+<div className="w-10 h-10 bg-surface rounded-full flex items-center justify-center mr-3">
+              <span className="text-background font-bold text-lg">C</span>
             </div>
-            <h1 className="text-white text-xl font-bold">ClearITT</h1>
+<h1 className="text-text-primary text-xl font-bold">ClearITT</h1>
           </div>
           
           {/* Right side - User info and Logout */}
           <div className="flex items-center gap-4">
             {user && (
-              <span className="text-white text-sm">
+<span className="text-text-primary text-sm">
                 Welcome, {user.firstName || user.name || 'User'}
               </span>
             )}
@@ -64,13 +64,13 @@ const Layout = () => {
           <Button
             variant="ghost"
             onClick={() => setMobileMenuOpen(true)}
-            className="p-2 text-white"
+className="p-2 text-text-primary"
           >
             <ApperIcon name="Menu" size={24} />
           </Button>
-          <div className="flex-1 text-sm font-semibold leading-6 text-white">
+<div className="flex-1 text-sm font-semibold leading-6 text-text-primary">
             <div className="flex items-center">
-              <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
+<div className="w-6 h-6 bg-surface rounded-full flex items-center justify-center mr-2">
                 <span className="text-header-bg font-bold text-sm">C</span>
               </div>
               ClearITT

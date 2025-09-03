@@ -35,7 +35,7 @@
 }
 
 .Toastify__toast--success {
-  background: linear-gradient(135deg, #5BF297, #22C55E);
+  background: linear-gradient(135deg, #22F58A, #A2FECD);
   color: white;
 }
 
@@ -63,8 +63,8 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #F8FAFC;
-  color: #1e293b;
+  background-color: #111814;
+  color: #FFFFFF;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -82,7 +82,7 @@ p {
 
 /* Custom utilities */
 .text-gradient {
-  background: linear-gradient(135deg, #22C55E, #5BF297);
+  background: linear-gradient(135deg, #22F58A, #A2FECD);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -141,7 +141,7 @@ p {
 
 /* Settlement banner */
 .settlement-banner {
-  background: linear-gradient(135deg, #22C55E, #5BF297);
+  background: linear-gradient(135deg, #22F58A, #A2FECD);
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
@@ -155,9 +155,9 @@ p {
 }
 
 .currency-aud {
-  font-weight: 600;
-  color: #22C55E;
+  color: #22F58A;
 }
+
 /* Tooltip styling */
 .tooltip-container:hover .tooltip {
   opacity: 1;
