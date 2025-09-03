@@ -20,11 +20,11 @@ const MetricCard = ({
       <Card className={cn("p-6", className)}>
         <div className="animate-pulse">
           <div className="flex items-center justify-between mb-4">
-<div className="h-4 bg-text-secondary/20 rounded w-24"></div>
-            <div className="h-8 w-8 bg-text-secondary/20 rounded-full"></div>
+            <div className="h-4 bg-slate-200 rounded w-24"></div>
+            <div className="h-8 w-8 bg-slate-200 rounded-full"></div>
           </div>
-          <div className="h-8 bg-text-secondary/20 rounded w-32 mb-2"></div>
-          <div className="h-3 bg-text-secondary/20 rounded w-16"></div>
+          <div className="h-8 bg-slate-200 rounded w-32 mb-2"></div>
+          <div className="h-3 bg-slate-200 rounded w-16"></div>
         </div>
       </Card>
     );
@@ -39,7 +39,7 @@ positive: "text-success bg-success/10",
     error: "text-error bg-error/10",
     negative: "text-error bg-error/10",
     info: "text-info bg-info/10",
-    neutral: "text-text-secondary bg-text-secondary/10"
+    neutral: "text-text-secondary bg-slate-100"
   };
 
   return (
@@ -75,7 +75,7 @@ className="text-2xl font-bold text-text-primary"
             {change && (
               <div className={cn(
 "flex items-center text-sm",
-change > 0 ? "text-success" : change < 0 ? "text-error" : "text-text-secondary"
+                change > 0 ? "text-success" : change < 0 ? "text-error" : "text-slate-500"
               )}>
                 <ApperIcon 
                   name={change > 0 ? "TrendingUp" : change < 0 ? "TrendingDown" : "Minus"} 
@@ -87,7 +87,7 @@ change > 0 ? "text-success" : change < 0 ? "text-error" : "text-text-secondary"
             )}
             
             {breakdown && (
-<div className="space-y-1 pt-2 border-t border-text-secondary/20">
+              <div className="space-y-1 pt-2 border-t border-slate-100">
                 {breakdown.map((item, index) => (
                   <div key={index} className="flex justify-between items-center text-sm">
 <span className="text-sm text-text-secondary">{item.label}</span>

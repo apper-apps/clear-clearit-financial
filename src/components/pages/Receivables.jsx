@@ -76,8 +76,8 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-<h1 className="text-3xl font-bold text-accent">Money Coming In</h1>
-<p className="text-text-secondary mt-1">
+<h1 className="text-3xl font-bold text-slate-900">Money Coming In</h1>
+          <p className="text-slate-600 mt-1">
             Track and collect payments from your customers
           </p>
         </div>
@@ -99,7 +99,7 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
       </div>
 
       {/* Filters & Search */}
-<div className="bg-surface rounded-lg border border-text-secondary/20 p-6 space-y-4">
+      <div className="bg-white rounded-lg border border-slate-200 p-6 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <SearchBar
             placeholder="Search invoices by company, invoice number, contact..."

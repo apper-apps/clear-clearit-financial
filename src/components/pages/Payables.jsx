@@ -87,7 +87,7 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
     <div
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-<h1 className="text-3xl font-bold text-accent">Money Going Out</h1>
+            <h1 className="text-3xl font-bold text-text-primary">Money Going Out</h1>
             <p className="text-text-secondary mt-1">Manage bills you need to pay and outgoing payments
                           </p>
         </div>
@@ -106,7 +106,7 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
         </div>
     </div>
     {/* Filters & Search */}
-<div className="bg-surface rounded-lg border border-text-secondary/20 p-6 space-y-4">
+    <div className="bg-white rounded-lg border border-slate-200 p-6 space-y-4">
         <div
             className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <SearchBar
@@ -153,8 +153,8 @@ invoice.companyName?.toLowerCase().includes(searchLower) ||
         onSelectionChange={setSelectedInvoices}
         type="payable" />
     {/* Payment Summary */}
-{filteredInvoices.length > 0 && <div className="bg-surface rounded-lg border border-text-secondary/20 p-6">
-<h3 className="text-lg font-semibold text-background mb-4">Your Payment Summary</h3>
+{filteredInvoices.length > 0 && <div className="bg-surface rounded-lg border border-slate-200 p-6">
+        <h3 className="text-lg font-semibold text-text-primary mb-4">Your Payment Summary</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center p-4 bg-error/5 rounded-lg border border-error/20">
                 <div className="text-xl font-bold text-error mb-1">${invoices?.filter(inv => inv.status === "overdue").reduce((sum, inv) => sum + (inv.amount || 0), 0).toLocaleString() || "0"}
