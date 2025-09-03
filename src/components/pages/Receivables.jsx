@@ -13,10 +13,10 @@ const Receivables = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedInvoices, setSelectedInvoices] = useState([]);
   
-  const { invoices, loading, error, loadInvoices, updateInvoiceStatus } = useInvoices("receivable");
+const { invoices, loading, error, loadInvoices, updateInvoiceStatus } = useInvoices("receivable");
 
   const tabs = [
-    { id: "all", label: "All invoices", count: invoices?.length || 0 },
+{ id: "all", label: "All invoices", count: invoices?.length || 0 },
     { id: "paid", label: "Paid", count: invoices?.filter(inv => inv.status === "paid")?.length || 0 },
     { id: "clearing", label: "Set to clear", count: invoices?.filter(inv => inv.status === "clearing")?.length || 0 },
     { id: "overdue", label: "Overdue", count: invoices?.filter(inv => inv.status === "overdue")?.length || 0 },
@@ -30,7 +30,7 @@ const Receivables = () => {
     let filtered = invoices;
 
     // Filter by tab
-    if (activeTab !== "all") {
+if (activeTab !== "all") {
       filtered = filtered.filter(invoice => invoice.status === activeTab);
     }
 
@@ -38,7 +38,7 @@ const Receivables = () => {
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(invoice => 
-        invoice.companyName?.toLowerCase().includes(searchLower) ||
+invoice.companyName?.toLowerCase().includes(searchLower) ||
         invoice.invoiceNumber?.toLowerCase().includes(searchLower) ||
         invoice.contactName?.toLowerCase().includes(searchLower) ||
         invoice.email?.toLowerCase().includes(searchLower)
@@ -60,7 +60,7 @@ const Receivables = () => {
 
   const handleExportCSV = () => {
     const dataToExport = selectedInvoices.length > 0 
-      ? filteredInvoices.filter(inv => selectedInvoices.includes(inv.Id))
+? filteredInvoices.filter(inv => selectedInvoices.includes(inv.Id))
       : filteredInvoices;
     
     console.log("Exporting CSV for:", dataToExport);
@@ -148,7 +148,7 @@ const Receivables = () => {
       </div>
 
       {/* Invoice Table */}
-      <InvoiceTable
+<InvoiceTable
         invoices={filteredInvoices}
         loading={loading}
         error={error}

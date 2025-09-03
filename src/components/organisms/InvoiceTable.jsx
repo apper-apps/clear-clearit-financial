@@ -46,7 +46,7 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
   const [editingInvoice, setEditingInvoice] = useState(null);
   const [editValues, setEditValues] = useState({});
 
-  const sortedInvoices = React.useMemo(() => {
+const sortedInvoices = React.useMemo(() => {
     if (!sortConfig.key) return invoices;
 
     return [...invoices].sort((a, b) => {
@@ -106,7 +106,7 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
 
   const handleSelectAll = (checked) => {
     if (checked) {
-      onSelectionChange?.(sortedInvoices.map(invoice => invoice.Id));
+onSelectionChange?.(sortedInvoices.map(invoice => invoice.Id));
     } else {
       onSelectionChange?.([]);
     }
@@ -121,7 +121,7 @@ const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
   };
 
   const startEditing = (invoice) => {
-    setEditingInvoice(invoice.Id);
+setEditingInvoice(invoice.Id);
     setEditValues({
       amount: invoice.amount,
       companyName: invoice.companyName,
@@ -239,7 +239,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
           <tbody className="bg-white divide-y divide-slate-200">
             <AnimatePresence>
               {sortedInvoices.map((invoice, index) => {
-                const isSelected = selectedInvoices.includes(invoice.Id);
+const isSelected = selectedInvoices.includes(invoice.Id);
                 const isEditing = editingInvoice === invoice.Id;
                 const dueDateStatus = getDueDateStatus(invoice.dueDate);
                 
@@ -259,7 +259,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                     <td className="px-4 py-4">
                       <input
                         type="checkbox"
-                        checked={isSelected}
+checked={isSelected}
                         onChange={(e) => handleSelectInvoice(invoice.Id, e.target.checked)}
                         className="rounded border-slate-300 text-primary focus:ring-primary/50"
                       />
@@ -272,7 +272,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                         invoiceId={invoice.Id}
                       />
                     </td>
-                    <td className="px-4 py-4">
+<td className="px-4 py-4">
                       <div className="space-y-1">
                         <div className={cn(
                           "text-sm",
@@ -287,7 +287,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                         )}
                       </div>
                     </td>
-                    <td className="px-4 py-4 text-sm text-slate-600">
+<td className="px-4 py-4 text-sm text-slate-600">
                       {invoice.paidDate ? formatDate(invoice.paidDate) : "-"}
                     </td>
                     <td className="px-4 py-4">
@@ -306,16 +306,16 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                         )}
                       </div>
                     </td>
-                    <td className="px-4 py-4 font-mono text-sm">
+<td className="px-4 py-4 font-mono text-sm">
                       {invoice.invoiceNumber}
                     </td>
-                    <td className="px-4 py-4 font-mono text-xs text-slate-600">
+<td className="px-4 py-4 font-mono text-xs text-slate-600">
                       {invoice.payId}
                     </td>
-                    <td className="px-4 py-4 font-mono text-xs abn-format">
+<td className="px-4 py-4 font-mono text-xs abn-format">
                       {formatABN(invoice.abn)}
                     </td>
-                    <td className="px-4 py-4">
+<td className="px-4 py-4">
                       <StatusBadge status={invoice.status} />
                     </td>
                     <td className="px-4 py-4">
@@ -343,7 +343,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                               <Button
                                 size="small"
                                 variant="ghost"
-                                onClick={() => startEditing(invoice)}
+onClick={() => startEditing(invoice)}
                               >
                                 <ApperIcon name="Edit3" size={14} />
                               </Button>
@@ -351,7 +351,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
                             <Tooltip text="Mark as Paid">
                               <Button
                                 size="small"
-                                variant="ghost"
+variant="ghost"
                                 onClick={() => onStatusUpdate?.(invoice.Id, "paid")}
                               >
                                 <ApperIcon name="CheckCircle" size={14} />
@@ -380,7 +380,7 @@ const EditableCell = ({ value, field, type = "text", invoiceId }) => {
           <div className="flex items-center space-x-4">
             <span className="text-slate-600">Total Amount:</span>
             <span className="font-bold currency-aud">
-              {formatCurrency(
+{formatCurrency(
                 sortedInvoices.reduce((sum, invoice) => sum + (invoice.amount || 0), 0)
               )}
             </span>

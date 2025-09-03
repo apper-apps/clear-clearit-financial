@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
+import { useSelector } from "react-redux";
+import { AuthContext } from "../../App";
 import Sidebar from "@/components/organisms/Sidebar";
 import MobileSidebar from "@/components/organisms/MobileSidebar";
 import Button from "@/components/atoms/Button";
@@ -9,21 +11,38 @@ import ApperIcon from "@/components/ApperIcon";
 
 const Layout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { logout } = useContext(AuthContext);
+  const { user } = useSelector((state) => state.user);
 
-return (
-<div className="min-h-screen bg-surface">
+  return (
+    <div className="min-h-screen bg-surface">
       {/* Desktop Header */}
-<div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-header-bg h-16 shadow-lg">
+      <div className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-header-bg h-16 shadow-lg">
         <div className="flex items-center justify-between h-full px-6">
           {/* Left side - Logo */}
           <div className="flex items-center">
-<div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
               <span className="text-header-bg font-bold text-lg">C</span>
             </div>
             <h1 className="text-white text-xl font-bold">ClearITT</h1>
           </div>
           
-          {/* Right side - Clone & Edit Button */}
+          {/* Right side - User info and Logout */}
+          <div className="flex items-center gap-4">
+            {user && (
+              <span className="text-white text-sm">
+                Welcome, {user.firstName || user.name || 'User'}
+              </span>
+            )}
+            <Button
+              variant="ghost"
+              onClick={logout}
+              className="text-white hover:bg-white/10"
+            >
+              <ApperIcon name="LogOut" size={16} className="mr-2" />
+              Logout
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -39,7 +58,7 @@ return (
       />
 
       {/* Main Content */}
-<div className="lg:pl-72 lg:pt-16">
+      <div className="lg:pl-72 lg:pt-16">
         {/* Mobile Header */}
         <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-header-bg px-4 py-4 shadow-sm sm:px-6 lg:hidden">
           <Button
@@ -50,14 +69,21 @@ return (
             <ApperIcon name="Menu" size={24} />
           </Button>
           <div className="flex-1 text-sm font-semibold leading-6 text-white">
-<div className="flex items-center">
+            <div className="flex items-center">
               <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center mr-2">
                 <span className="text-header-bg font-bold text-sm">C</span>
               </div>
               ClearITT
             </div>
           </div>
-</div>
+          <Button
+            variant="ghost"
+            onClick={logout}
+            className="p-2 text-white"
+          >
+            <ApperIcon name="LogOut" size={16} />
+          </Button>
+        </div>
 
         {/* Main Content */}
         <main className="min-h-screen">

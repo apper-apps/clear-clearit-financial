@@ -13,10 +13,10 @@ const Payables = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedInvoices, setSelectedInvoices] = useState([]);
   
-  const { invoices, loading, error, loadInvoices, updateInvoiceStatus } = useInvoices("payable");
+const { invoices, loading, error, loadInvoices, updateInvoiceStatus } = useInvoices("payable");
 
   const tabs = [
-    { id: "all", label: "All invoices", count: invoices?.length || 0 },
+{ id: "all", label: "All invoices", count: invoices?.length || 0 },
     { id: "unpaid", label: "Unpaid", count: invoices?.filter(inv => inv.status === "unpaid")?.length || 0 },
     { id: "scheduled", label: "Scheduled", count: invoices?.filter(inv => inv.status === "scheduled")?.length || 0 },
     { id: "clearing", label: "Clearing", count: invoices?.filter(inv => inv.status === "clearing")?.length || 0 },
@@ -30,7 +30,7 @@ const Payables = () => {
     let filtered = invoices;
 
     // Filter by tab
-    if (activeTab !== "all") {
+if (activeTab !== "all") {
       filtered = filtered.filter(invoice => invoice.status === activeTab);
     }
 
@@ -38,7 +38,7 @@ const Payables = () => {
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(invoice => 
-        invoice.companyName?.toLowerCase().includes(searchLower) ||
+invoice.companyName?.toLowerCase().includes(searchLower) ||
         invoice.invoiceNumber?.toLowerCase().includes(searchLower) ||
         invoice.contactName?.toLowerCase().includes(searchLower) ||
         invoice.email?.toLowerCase().includes(searchLower)
@@ -67,7 +67,7 @@ const Payables = () => {
 
   const handleExportCSV = () => {
     const dataToExport = selectedInvoices.length > 0 
-      ? filteredInvoices.filter(inv => selectedInvoices.includes(inv.Id))
+? filteredInvoices.filter(inv => selectedInvoices.includes(inv.Id))
       : filteredInvoices;
     
     console.log("Exporting CSV for:", dataToExport);
@@ -143,7 +143,7 @@ const Payables = () => {
         <TabNavigation tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
     {/* Invoice Table */}
-    <InvoiceTable
+<InvoiceTable
         invoices={filteredInvoices}
         loading={loading}
         error={error}
@@ -153,33 +153,31 @@ const Payables = () => {
         onSelectionChange={setSelectedInvoices}
         type="payable" />
     {/* Payment Summary */}
-    {filteredInvoices.length > 0 && <div className="bg-surface rounded-lg border border-slate-200 p-6">
+{filteredInvoices.length > 0 && <div className="bg-surface rounded-lg border border-slate-200 p-6">
         <h3 className="text-lg font-semibold text-text-primary mb-4">Your Payment Summary</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center p-4 bg-error/5 rounded-lg border border-error/20">
-                <div className="text-xl font-bold text-error mb-1">${invoices?.filter(inv => inv.status === "overdue").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
+                <div className="text-xl font-bold text-error mb-1">${invoices?.filter(inv => inv.status === "overdue").reduce((sum, inv) => sum + (inv.amount || 0), 0).toLocaleString() || "0"}
                 </div>
                 <div className="text-sm text-text-secondary">Past Due</div>
             </div>
             <div
                 className="text-center p-4 bg-warning/5 rounded-lg border border-warning/20">
-                <div className="text-xl font-bold text-warning mb-1">${invoices?.filter(inv => inv.status === "unpaid").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
+                <div className="text-xl font-bold text-warning mb-1">${invoices?.filter(inv => inv.status === "unpaid").reduce((sum, inv) => sum + (inv.amount || 0), 0).toLocaleString() || "0"}
                 </div>
                 <div className="text-sm text-text-secondary">Still to Pay</div>
             </div>
             <div className="text-center p-4 bg-info/5 rounded-lg border border-info/20">
-                <div className="text-xl font-bold text-info mb-1">${invoices?.filter(inv => inv.status === "scheduled").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
+                <div className="text-xl font-bold text-info mb-1">${invoices?.filter(inv => inv.status === "scheduled").reduce((sum, inv) => sum + (inv.amount || 0), 0).toLocaleString() || "0"}
                 </div>
-                <div className="text-sm text-text-secondary">Scheduled</div>
                 <div className="text-sm text-text-secondary">Scheduled Amount</div>
             </div>
             <div
                 className="text-center p-4 bg-success/5 rounded-lg border border-success/20">
-                <div className="text-xl font-bold text-success mb-1">${invoices?.filter(inv => inv.status === "clearing").reduce((sum, inv) => sum + inv.amount, 0).toLocaleString() || "0"}
+                <div className="text-xl font-bold text-success mb-1">${invoices?.filter(inv => inv.status === "clearing").reduce((sum, inv) => sum + (inv.amount || 0), 0).toLocaleString() || "0"}
                 </div>
                 <div className="text-sm text-text-secondary">Processing</div>
             </div>
-            <div className="text-sm text-text-secondary">Clearing Amount</div>
         </div>
     </div>}
 </motion.div>

@@ -13,7 +13,7 @@ const MetricCard = ({
   color = "primary", 
   breakdown,
   className,
-  loading = false 
+  loading = false
 }) => {
   if (loading) {
     return (
@@ -69,7 +69,7 @@ className="text-2xl font-bold text-text-primary"
               animate={{ scale: 1 }}
               transition={{ duration: 0.2, delay: 0.1 }}
             >
-              {typeof value === "number" ? formatCurrency(value) : value}
+{typeof value === "number" ? formatCurrency(value) : value}
             </motion.div>
             
             {change && (
