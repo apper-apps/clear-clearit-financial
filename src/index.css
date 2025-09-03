@@ -35,7 +35,7 @@
 }
 
 .Toastify__toast--success {
-  background: linear-gradient(135deg, #5BF297, #4AE085);
+  background: linear-gradient(135deg, #10B981, #059669);
   color: white;
 }
 
@@ -82,7 +82,7 @@ p {
 
 /* Custom utilities */
 .text-gradient {
-  background: linear-gradient(135deg, #4AE085, #5BF297);
+  background: linear-gradient(135deg, #0F766E, #10B981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -124,8 +124,7 @@ p {
 }
 
 .status-paid {
-  background-color: rgba(91, 242, 151, 0.1);
-  color: #4AE085;
+  @apply bg-green-100 text-green-800;
 }
 
 .status-clearing {
@@ -142,7 +141,7 @@ p {
 
 /* Settlement banner */
 .settlement-banner {
-  background: linear-gradient(135deg, #4AE085, #5BF297);
+  background: linear-gradient(135deg, #0F766E, #10B981);
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
@@ -156,7 +155,8 @@ p {
 }
 
 .currency-aud {
-  color: #4AE085;
+  font-weight: 600;
+  color: #0F766E;
 }
 
 /* Tooltip styling */
